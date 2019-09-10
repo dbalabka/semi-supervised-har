@@ -1,0 +1,37 @@
+name: space-type-recognition
+channels:
+  - anaconda
+  - conda-forge
+dependencies:
+  - python=3.6
+#  - python=3.7
+#  - numpy=1.15.4
+  - numpy=1.16
+  - pandas=0.23.4
+# It is strange but MKL package does not support AVX
+#  - tensorflow-mkl=1.12.0
+#  - anaconda::tensorflow=1.13.1
+#  - anaconda::tensorboard=1.13.1
+# required to support PyCharm
+  - jupyter
+  - jupyterlab
+  - pydot=1.3.0
+  - graphviz=2.40.1
+  - matplotlib=3.0.1
+  - keras=2.2.4
+  - scipy=1.1.0
+  - scikit-learn=0.20.1
+  - tqdm=4.28.1
+  - pip
+  - IPython
+  - conda-forge::hdbscan=0.8.18
+  # Use Conda Forge package because it supports CPU and AVX. Tensorflow-eigen does not support it for some reason and slow
+  - conda-forge::tensorflow==1.13.1
+  - conda-forge::tensorboard==1.13.1
+  - pip:
+      - git+https://www.github.com/keras-team/keras-contrib.git@46fcdb9384b3bc9399c651b2b43640aa54098e64
+#      - keras
+#      - tensorflow>=1.12
+#      - tensorboard>=1.12
+#      - tensorflow==1.13.1
+#      - tensorboard==1.13.1
